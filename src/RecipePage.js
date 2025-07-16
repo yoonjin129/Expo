@@ -233,7 +233,7 @@ function RecipePage() {
               <a href={recipe.blogLink} target="_blank" rel="noopener noreferrer" className="recipe-link">
                 블로그 보기
               </a>
-              <a href={recipe.videoLink} target="_blank" rel="noopener noreferrer" className="recipe-link">
+              <a href={recipe.videoLink} target="_blank" rel="noopeaner noreferrer" className="recipe-link">
                 영상보기
               </a>
             </div>

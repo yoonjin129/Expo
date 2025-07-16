@@ -64,6 +64,7 @@
   justify-content: flex-end;
   gap: 16px;
   margin-top: 12px;
+  
 }
 
 .recipe-link {
@@ -101,7 +102,8 @@
 
   .recipe-links {
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: flex-end;
     gap: 8px;
+    flex-direction: row !important;
   }
 }

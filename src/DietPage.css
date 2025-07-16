@@ -94,6 +94,7 @@
 .recommend-card {
   display: flex;
   background: #f8f8f8;
+  align-items: center; 
   margin: 10px 0;
   padding: 10px;
   border-radius: 10px;
@@ -101,7 +102,7 @@
 
 .recommend-card .img {
   width: 60px;
-  height: auto;
+  height: 60px;
   margin-right: 10px;
   border-radius: 8px;
   object-fit: cover;
@@ -148,22 +149,26 @@
 }
 
 .nutrient {
+  display: flex;
+  flex-direction: column;       
+  justify-content: center;      
+  align-items: center;          
   text-align: center;
-  color: rgb(0, 0, 0);
   padding: 10px 0;
-  font-weight: bold;
-  font-size: 14px;
-  position: relative;
+  color: rgb(0, 0, 0);
+  height: 100%;
 }
 
-.nutrient-label {
-  position: absolute;
-  top: -35px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 20px;
+.nutrient .label {
+  font-size: 12px;
   font-weight: bold;
 }
+
+.nutrient .gram {
+  font-size: 10px;
+  margin-top: 2px;
+}
+
 
 .protein {
   background-color: #85C1E9;
