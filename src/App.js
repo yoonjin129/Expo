@@ -38,22 +38,6 @@ function App() {
             </li>
             <li>
               <Link
-                to="/score"
-                style={{ color: "white", textDecoration: "none" }}
-              >
-                AI 점수 평가
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/exercise"
-                style={{ color: "white", textDecoration: "none" }}
-              >
-                운동 페이지
-              </Link>
-            </li>
-            <li>
-              <Link
                 to="/choice"
                 style={{ color: "white", textDecoration: "none" }}
               >
@@ -65,7 +49,23 @@ function App() {
                 to="/camera"
                 style={{ color: "white", textDecoration: "none" }}
               >
-                운동 카메라
+                운동 시작
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/exercise"
+                style={{ color: "white", textDecoration: "none" }}
+              >
+                운동 종료
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/score"
+                style={{ color: "white", textDecoration: "none" }}
+              >
+                결과
               </Link>
             </li>
           </ul>

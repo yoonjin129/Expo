@@ -3,7 +3,7 @@ import "./MainPage.css";
 
 import folderIcon from "../assets/folder.png";
 import timerIcon from "../assets/timer.png";
-import userIcon from "../assets/user.png";
+import profileImg from "../assets/profile.png"; // 여기 수정
 import homeIcon from "../assets/home.png";
 import calendarIcon from "../assets/calendar.png";
 import chatbotIcon from "../assets/chatbot.png";
@@ -59,7 +59,8 @@ const MainPage = () => {
         <div className="ranking-box">
           <div className="top-rank">
             <span className="top-rank-label">TOP 1</span>
-            <img src={userIcon} alt="Top user" className="rank-avatar" />
+            <img src={profileImg} alt="Top user" className="rank-avatar" />{" "}
+            {/* 여기 수정 */}
             <span className="top-name">김윤진</span>
             <span className="top-score">285</span>
           </div>
@@ -74,7 +75,7 @@ const MainPage = () => {
               <li key={rank}>
                 <div className="rank-left">
                   <span className="rank-num">{rank}</span>
-                  <img src={userIcon} alt="user" />
+                  <img src={profileImg} alt="user" /> {/* 여기 수정 */}
                   <span className="rank-name">{name}</span>
                 </div>
                 <span className="rank-score">{score}</span>
@@ -114,7 +115,8 @@ const MainPage = () => {
           <img src={calendarIcon} alt="캘린더" width="20" height="20" />
         </button>
         <button className="nav-btn">
-          <img src={userIcon} alt="유저" width="20" height="20" />
+          <img src={profileImg} alt="유저" width="20" height="20" />{" "}
+          {/* 여기 수정 */}
         </button>
       </nav>
     </div>
