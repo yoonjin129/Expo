@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: white;
+}
+
+.container {
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* <1. 상단 바> */
+.top-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+/* 챗봇 이미지 컨테이너 */
+.back {
+  position: fixed;
+  top: 10px; /* 원하는 만큼 아래로 내림 */
+  align-items: center;         /* 세로 가운데 정렬 */
+  justify-content: center;     /* 가로 가운데 정렬 
+  width: 40px;    /* 원하는 크기 */
+  height: 40px;
+  cursor: pointer;
+  z-index: 1000;  /* 다른 요소보다 위에 뜨도록 */
+  padding: 0;         
+}
+
+.back:active{
+    background-color: #AECBEB;
+}
+
+.title {
+  position: absolute;
+  top: 1px; /* 원하는 만큼 아래로 내림 */
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-size: 18px;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+/* <2. 카메라 화면 박스> */
+.camera-box {
+  background-color: #f0f2f5;
+  height: 530px;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+#cameraVideo {
+  width: 100%;           /* 또는 원하는 픽셀: 예: 320px */
+  height: 100%;          /* 또는 비율에 맞게 auto */
+  object-fit: cover;     /* 영상 비율 유지하면서 꽉 채우기 */
+}
+
+
+
+/* <3. 자세 정확도> */
+.accuracy-section {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.accuracy-value {
+  font-weight: bold;
+}
+
+/* 진행률 바 */
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #a8c9f0;
+  border-radius: 4px;
+}
+
+
+
+/* <4. 횟수 박스> */
+.count-box {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.count-label {
+  color: gray;
+  margin-bottom: 5px;
+}
+
+.count-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+
+
+/* <5. 오디오 피드백> */
+.audio-feedback {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+
+
+/* <6. 버튼 그룹> */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px 0;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn.stop {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+.btn.stop:active{
+    background-color: #AECBEB;
+}
+
+.btn.finish {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+.btn.finish:active{
+    background-color: #AECBEB;
+}

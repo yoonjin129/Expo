@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>메인 페이지</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- 추천 -->
+    <section class="feature-section">
+      <div class="feature-buttons">
+        <h3>추천 기능</h3>
+        <div class="button-group">
+          <button><img src="images/folder.png" alt="루틴 아이콘" class="button-icon" /> 루틴</button>
+          <button><img src="images/timer.png" alt="타이머 아이콘" class="button-icon" /> 인터벌 타이머</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 운동, 기록, 식단 -->
+    <section class="category-section">
+      <button class="category">운동</button>
+      <button class="category">기록</button>
+      <button class="category">식단</button>
+    </section>
+
+    <!-- 운동 변화 그래프 (막대 그래프 간단 표현) -->
+    <section class="graph-section">
+      <h4 class="graph-title">운동 변화</h4>
+      <div class="graph">
+        <div class="bar" style="height: 40%"></div>
+        <div class="bar" style="height: 60%"></div>
+        <div class="bar" style="height: 80%"></div>
+        <div class="bar" style="height: 90%"></div>
+        <div class="bar" style="height: 70%"></div>
+        <div class="bar" style="height: 50%"></div>
+        <div class="bar" style="height: 30%"></div>
+      </div>
+    </section>
+
+    <!-- 주간 랭킹 -->
+    <section class="ranking-section">
+    <h4 class="ranking-title">주간 랭킹</h4>
+    <div class="ranking-box">
+        <div class="top-rank">
+        <span class="top-rank-label">TOP 1</span>
+        <img src="images/user.png" alt="Top user" class="rank-avatar" />
+        <span class="top-name">김윤진</span>
+        <span class="top-score">285</span>
+        </div>
+        <hr class="divider" />
+        <ul class="rank-list">
+        <li>
+            <div class="rank-left">
+            <span class="rank-num">2</span>
+            <img src="images/user.png" alt="user" />
+            <span class="rank-name">김선민</span>
+            </div>
+            <span class="rank-score">120</span>
+        </li>
+        <li>
+            <div class="rank-left">
+            <span class="rank-num">3</span>
+            <img src="images/user.png" alt="user" />
+            <span class="rank-name">정아인</span>
+            </div>
+            <span class="rank-score">110</span>
+        </li>
+        <li>
+            <div class="rank-left">
+            <span class="rank-num">4</span>
+            <img src="images/user.png" alt="user" />
+            <span class="rank-name">탁하나</span>
+            </div>
+            <span class="rank-score">109</span>
+        </li>
+        <li>
+            <div class="rank-left">
+            <span class="rank-num">5</span>
+            <img src="images/user.png" alt="user" />
+            <span class="rank-name">현예진</span>
+            </div>
+            <span class="rank-score">105</span>
+        </li>
+        </ul>
+    </div>
+    </section>
+
+    <!-- 추천 콘텐츠 -->
+    <section class="content">
+    <h4 class="recommend-title">추천 콘텐츠</h4>
+    <div class="contents">
+        <iframe src="https://www.youtube.com/embed/r1QapH1SIAI" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/CnLZUXQofiI" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/F6MI5hkLNEk" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+    </div>
+    </section>
+
+
+    <!-- 챗봇 이미지 추가 -->
+    <div class="chatbot">
+        <img src="images/chatbot.png" alt="챗봇 이미지" />
+    </div>
+
+  <!-- 하단 네비게이션 -->
+    <nav class="bottom-nav">
+    <button class="nav-btn active">
+        <img src="images/home.png" alt="홈" width="20" height="20" />
+    </button>
+    <button class="nav-btn">
+        <img src="images/calendar.png" alt="캘린더" width="20" height="20" />
+    </button>
+    <button class="nav-btn">
+        <img src="images/user.png" alt="유저" width="20" height="20" />
+    </button>
+    </nav>
+</body>
+</html>
