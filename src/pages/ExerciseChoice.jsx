@@ -20,7 +20,7 @@ export default function ExerciseChoice() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/exercise");
+    navigate("/camera");
   };
 
   return (

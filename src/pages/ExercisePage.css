@@ -1,0 +1,87 @@
+/* src/pages/ExercisePage.css */
+.exercise-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: white;
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+.exercise-main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 자식 요소들을 수평 중앙 정렬 */
+  padding: 20px;
+  padding-bottom: 90px;
+  box-sizing: border-box;
+}
+
+/* 카메라 피드와 코칭 메시지를 함께 묶어줄 래퍼 */
+.camera-feed-wrapper {
+  position: relative;
+  width: 90%; /* <-- 다시 90% 너비 사용 */
+  max-width: 700px; /* <-- 최대 너비 */
+  margin: 0 auto 20px auto; 
+  box-sizing: border-box;
+  /* margin: 0 auto; 는 align-items: center; 로 대체 가능하지만,
+     혹시 모를 상황에 대비해 추가해 두는 것도 좋습니다.
+     flex-direction: column 일 때 align-items는 교차축 정렬 (즉 수평)을 담당합니다. */
+}
+
+/* CoachingMessage를 CameraFeed 하단 중앙으로 이동 */
+.coaching-message-container { /* CoachingMessage 컴포넌트의 최상위 div 클래스 */
+  position: absolute;
+  bottom: 40px; /* 카메라 피드 하단에서 40px 위로 */
+  left: 50%;
+  transform: translateX(-50%); /* 수평 중앙 정렬 */
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
+
+
+/* AI 점수, 횟수, 타이머를 세로로 나열할 섹션 */
+.exercise-vertical-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* 각 컴포넌트 사이 간격 */
+  width: 90%; /* <-- 다시 90% 너비 사용 */
+  max-width: 700px; /* <-- 최대 너비 */
+  margin: 0 auto; /* <-- 이 줄을 추가하여 중앙 정렬 강제 */
+  align-items: center;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+/* 개별 컴포넌트의 너비를 조절하여 exercise-vertical-info-section 안에서 꽉 차도록 */
+.score-bar-container,
+.exercise-info-container,
+.timer-display-container {
+  width: 100%; /* 부모 (exercise-vertical-info-section)의 너비를 꽉 채움 */
+  /* 각 컴포넌트 자체 CSS에 min-width가 있다면 충돌하지 않도록 확인 */
+}
+
+
+/* 반응형을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+  .exercise-main-content {
+    padding: 15px;
+    padding-bottom: 80px;
+  }
+  .camera-feed-wrapper,
+  .exercise-vertical-info-section {
+    width: 95%; /* <-- 모바일에서는 95% 너비 */
+    max-width: unset; /* 모바일에서는 최대 너비 제한 해제 */
+    margin: 0 auto 15px auto; /* 모바일 하단 간격 */
+  }
+  .coaching-message-container {
+    bottom: 15px; /* 모바일에서 하단에서 15px 위로 */
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}

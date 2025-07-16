@@ -1,0 +1,33 @@
+/* src/components/CoachingMessage.css */
+.coaching-message-container {
+  background-color: rgba(255, 255, 255, 0.2); /* 반투명 흰색 배경 */
+  border-radius: 10px; /* 둥근 모서리 */
+  padding: 15px 20px;
+  margin: 20px auto 20px auto; /* 상하 여백 20px, 좌우 자동 (중앙 정렬) */
+  max-width: 80%; /* 최대 너비 설정 */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+  backdrop-filter: blur(5px); /* 배경 흐림 효과 (최신 브라우저 지원) */
+  -webkit-backdrop-filter: blur(5px); /* 웹킷 브라우저 지원 */
+}
+
+.coaching-text {
+  font-size: 18px;
+  color: white; /* 흰색 텍스트 */
+  font-weight: bold;
+  margin: 0; /* 기본 마진 제거 */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 텍스트 그림자 */
+}
+
+/* 반응형 디자인: 768px 이하 화면 (태블릿/모바일) */
+@media (max-width: 768px) {
+  .coaching-message-container {
+    padding: 12px 15px;
+    margin: 15px auto 15px auto;
+    max-width: 90%;
+  }
+
+  .coaching-text {
+    font-size: 16px;
+  }
+}

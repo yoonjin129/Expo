@@ -1,0 +1,66 @@
+/* src/components/ScoreBar.css */
+.score-bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px 20px;
+  min-width: 160px; /* 최소 너비 지정 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.score-label {
+  font-size: 14px;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+.score-bar-background {
+  width: 100%;
+  height: 25px; /* 막대 높이 */
+  background-color: rgba(116, 116, 116, 0.2); /* 배경색 */
+  border-radius: 12px;
+  overflow: hidden; /* 내부 채우기가 밖으로 나가지 않도록 */
+  position: relative; /* 점수 숫자를 위에 올리기 위함 */
+  display: flex; /* 점수 숫자를 중앙에 배치하기 위함 */
+  align-items: center;
+  justify-content: center;
+}
+
+.score-bar-fill {
+  height: 100%;
+  background-color: #4CAF50; /* 기본 채우기 색상 (JS에서 변경) */
+  border-radius: 12px; /* 배경과 동일하게 둥근 모서리 */
+  transition: width 0.5s ease-out; /* 너비 변화에 애니메이션 효과 */
+  position: absolute; /* 배경 위로 겹치도록 */
+  left: 0;
+  top: 0;
+}
+
+.score-value {
+  position: relative; /* fill 위에 오도록 */
+  z-index: 1; /* fill보다 위에 있도록 */
+  font-size: 18px;
+  font-weight: bold;
+  color: white; /* 텍스트 색상 */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* 반응형 디자인: 768px 이하 화면 (태블릿/모바일) */
+@media (max-width: 768px) {
+  .score-bar-container {
+    padding: 10px 15px;
+    min-width: 140px;
+  }
+  .score-label {
+    font-size: 12px;
+  }
+  .score-bar-background {
+    height: 22px;
+  }
+  .score-value {
+    font-size: 16px;
+  }
+}
