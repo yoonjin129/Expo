@@ -1,0 +1,58 @@
+/* src/components/UserProfile.css */
+.user-profile-container {
+  display: flex;
+  flex-direction: column; /* 요소를 수직으로 정렬 (이미지 -> 이름 -> 상태) */
+  align-items: center;   /* 수평 중앙 정렬 */
+  justify-content: center; /* 수직 중앙 정렬 (내부 콘텐츠 높이가 고정된 경우 유용) */
+  padding: 20px; /* 헤더보다 조금 더 많은 패딩으로 여백 확보 */
+  background-color: #fff;
+  margin-bottom: 20px; /* 다음 섹션과의 간격 */
+  border-bottom: 1px solid #eee; /* 하단 구분선 유지 */
+}
+
+.user-avatar {
+  width: 80px; /* 프로필 이미지 크기를 조금 키웁니다. */
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px; /* 이미지와 이름 사이 간격 */
+  object-fit: cover;
+  border: 2px solid #ddd; /* 테두리 추가 (선택 사항) */
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column; /* 이름과 상태를 수직으로 정렬 */
+  align-items: center;   /* 이름과 상태 텍스트를 수평 중앙 정렬 */
+}
+
+.user-name {
+  font-size: 22px; /* 이름 글씨 크기 키움 */
+  font-weight: bold;
+  margin: 0 0 5px 0; /* 이름 아래 간격 */
+  color: #333;
+}
+
+.user-status {
+  font-size: 16px; /* 상태 글씨 크기 키움 */
+  color: #666;
+  margin: 0;
+}
+
+/* 반응형 - 모바일 */
+@media (max-width: 768px) {
+  .user-profile-container {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  .user-avatar {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 8px;
+  }
+  .user-name {
+    font-size: 20px;
+  }
+  .user-status {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,29 @@
+/* src/components/FeedbackMessage.css */
+.feedback-message-container {
+  background-color: #e8f5e9; 
+  border-radius: 8px;
+  padding: 20px;
+  margin: 0 15px 20px 15px; /* 좌우 마진 15px, 아래 마진 20px */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0; 
+}
+
+/* 반응형 디자인: 768px 이하 화면 (태블릿/모바일) */
+@media (max-width: 768px) {
+  .feedback-message-container {
+    padding: 15px;
+    margin: 0 10px 15px 10px; /* 좌우 마진 10px */
+  }
+
+  .feedback-text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}

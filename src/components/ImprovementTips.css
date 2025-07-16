@@ -1,0 +1,70 @@
+/* src/components/ImprovementTips.css */
+.improvement-tips-section {
+  margin: 0 15px 20px 15px; /* 좌우 마진 15px, 아래 마진 20px */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center; /* 제목 중앙 정렬 */
+}
+
+.tips-list {
+  list-style: none; /* 기본 리스트 스타일 제거 */
+  padding: 0;
+  margin: 0;
+}
+
+.tip-item {
+  display: flex;
+  align-items: flex-start; /* 텍스트가 여러 줄일 경우 위쪽에 정렬 */
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* 불릿 포인트 대신 커스텀 아이콘 또는 원형 불릿 */
+.tip-item::before {
+  content: '•'; /* 원형 불릿 문자 */
+  color: #4CAF50; /* 녹색 */
+  font-size: 20px;
+  line-height: 1.5; /* 텍스트 라인 높이에 맞춤 */
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.tip-text {
+    flex: 1; /* 남은 공간을 차지 */
+}
+
+
+/* 반응형 디자인: 768px 이하 화면 (태블릿/모바일) */
+@media (max-width: 768px) {
+  .improvement-tips-section {
+    margin: 0 10px 15px 10px;
+    padding: 15px;
+  }
+
+  .section-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .tip-item {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .tip-item::before {
+    font-size: 18px;
+    margin-right: 8px;
+  }
+}

@@ -1,0 +1,58 @@
+/* src/components/Header.css */
+.header-container {
+  display: flex; 
+  align-items: center; /* 수직 중앙 정렬 */
+  justify-content: space-between; /* 요소들을 양 끝으로 벌림 (뒤로가기 <-> 제목) */
+  padding: 15px;
+  background-color: white; 
+  border-bottom: 1px solid #eee;
+  position: sticky; /* 상단 고정 */
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333; 
+  padding: 0;
+  /* 뒤로가기 버튼의 너비를 고정하여 제목 중앙 정렬 시 영향을 덜 받게 함 */
+  min-width: 30px; /* 적당한 최소 너비 */
+  text-align: left;
+}
+
+.header-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  flex-grow: 1; /* 남은 공간을 차지하여 중앙 정렬에 도움 */
+  text-align: center; /* 제목을 중앙 정렬 */
+  /* 뒤로가기 버튼과 제목 사이에 빈 공간이 생기도록 */
+  position: relative; /* z-index 적용을 위해 */
+  z-index: 1; /* 버튼보다 위에 오도록 */
+}
+
+/* 뒤로가기 버튼이 있을 때, 제목을 감싸는 div의 padding-left를 조정하여 시각적으로 중앙에 가깝게 */
+/* .header-container의 padding-left와 .back-button의 min-width 등을 고려하여 조절 */
+.header-container {
+    padding-left: 15px; /* 기본 패딩 */
+    padding-right: 15px; /* 기본 패딩 */
+}
+
+/* 모바일 반응형 (예시: 특정 너비 이하에서 스타일 변경) */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 10px;
+  }
+  .back-button {
+    font-size: 20px;
+    min-width: 25px;
+  }
+  .header-title {
+    font-size: 18px;
+  }
+}

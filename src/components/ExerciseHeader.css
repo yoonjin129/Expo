@@ -1,0 +1,65 @@
+/* src/components/ExerciseHeader.css */
+.exercise-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 요소들을 양 끝으로 정렬 */
+  padding: 15px 20px;
+  background-color: white; /* 어두운 배경색 */
+  color: black; /* 텍스트 색상 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
+  position: sticky; /* 상단 고정 */
+  top: 0;
+  z-index: 100; /* 다른 콘텐츠 위에 표시 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 하단에 그림자 */
+
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 24px; /* 아이콘 크기 */
+  cursor: pointer;
+  padding: 5px;
+  display: flex; /* 아이콘 중앙 정렬 */
+  align-items: center;
+  justify-content: center;
+}
+
+.back-button .material-icons {
+  font-size: 24px; /* Material Icons의 실제 폰트 크기 */
+}
+
+.exercise-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0; /* 기본 마진 제거 */
+  flex-grow: 1; /* 남은 공간을 차지하여 중앙 정렬 효과 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.placeholder {
+  width: 24px; /* 뒤로가기 버튼과 동일한 너비로 공간 확보 */
+  /* 필요시 여기에 다른 아이콘이나 요소 추가 가능 */
+}
+
+/* 반응형 디자인: 768px 이하 화면 (태블릿/모바일) */
+@media (max-width: 768px) {
+  .exercise-header-container {
+    padding: 10px 15px;
+  }
+
+  .back-button {
+    font-size: 22px;
+  }
+
+  .back-button .material-icons {
+    font-size: 22px;
+  }
+
+  .exercise-title {
+    font-size: 18px;
+  }
+}

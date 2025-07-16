@@ -1,0 +1,45 @@
+/* src/components/ExerciseInfo.css */
+.exercise-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white; /* 어두운 반투명 배경 */
+  border-radius: 10px;
+  padding: 15px 20px;
+  min-width: 120px; /* 최소 너비 지정 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  gap: 10px; /* 세트와 반복 횟수 사이 간격 */
+}
+
+.info-item {
+  text-align: center;
+}
+
+.info-label {
+  font-size: 14px;
+  color: #444444;
+  margin-bottom: 5px;
+}
+
+.info-value {
+  font-size: 32px;
+  font-weight: bold;
+  color: #007bff; /* 파란색 강조 색상 */
+  margin: 0;
+  font-variant-numeric: tabular-nums; /* 숫자 폭을 일정하게 유지 */
+}
+
+/* 반응형 디자인: 768px 이하 화면 (태블릿/모바일) */
+@media (max-width: 768px) {
+  .exercise-info-container {
+    padding: 10px 15px;
+    min-width: 100px;
+  }
+  .info-label {
+    font-size: 12px;
+  }
+  .info-value {
+    font-size: 28px;
+  }
+}

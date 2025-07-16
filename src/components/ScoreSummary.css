@@ -1,0 +1,73 @@
+/* src/components/ScoreSummary.css */
+.score-summary-container {
+  display: flex; /* 자식 요소들을 가로로 정렬 */
+  justify-content: space-around; /* 요소들 사이에 균등한 공간 배분 */
+  align-items: flex-start; /* 수직 상단 정렬 (필요시 center로 변경) */
+  gap: 15px; /* 카드 사이의 간격 */
+  padding: 20px 15px; /* 상하 20px, 좌우 15px 패딩 */
+  background-color: #f0f2f5; /* 컨테이너 배경색 (구분하기 위함) */
+  border-radius: 8px; /* 둥근 모서리 */
+  margin: 0 15px 20px 15px; /* 좌우 마진 15px, 아래 마진 20px */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+  flex-wrap: wrap; /* 작은 화면에서 카드가 아래로 내려가도록 */
+}
+
+.score-card {
+  flex: 1; /* 가로 공간을 균등하게 차지 */
+  min-width: 150px; /* 카드의 최소 너비 (작은 화면에서 뭉치지 않게) */
+  background-color: #ffffff; /* 카드 배경색 */
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center; /* 카드 내부 텍스트 중앙 정렬 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* 개별 카드 그림자 */
+  display: flex; /* 내부 텍스트 수직 정렬을 위해 */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* 카드 높이를 고정하여 정렬을 맞춤 (필요시 조절) */
+}
+
+.card-value {
+  font-size: 28px; /* 값 글씨 크기 */
+  font-weight: bold;
+  color: #3498db; /* 값 색상 */
+  margin-bottom: 5px; /* 값과 제목 사이 간격 */
+  margin-top: 0;
+}
+
+.card-title {
+  font-size: 14px; /* 제목 글씨 크기 */
+  color: #666;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* 반응형 디자인: 768px 이하 화면 (태블릿/모바일) */
+@media (max-width: 768px) {
+  .score-summary-container {
+    flex-direction: column; /* 카드를 수직으로 쌓음 */
+    align-items: center; /* 수평 중앙 정렬 */
+    padding: 15px;
+    margin: 0 10px 15px 10px; /* 좌우 마진 10px */
+  }
+
+  .score-card {
+    width: 90%; /* 카드가 컨테이너 너비의 90%를 차지 */
+    min-width: unset; /* 최소 너비 제한 해제 */
+    margin-bottom: 15px; /* 각 카드 아래 간격 */
+    height: auto; /* 높이 자동 조절 */
+    padding: 15px;
+  }
+
+  .score-card:last-child {
+    margin-bottom: 0; /* 마지막 카드 아래 간격 제거 */
+  }
+
+  .card-value {
+    font-size: 24px;
+  }
+
+  .card-title {
+    font-size: 13px;
+  }
+}
