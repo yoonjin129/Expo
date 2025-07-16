@@ -1,6 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function ExerciseCamera() {
+  const navigate = useNavigate();
+
+  const handleStart = () => {
+    navigate("/exercisefinish");
+  };
+
   return (
     <div style={styles.container}>
       <div style={styles.header}>
@@ -24,7 +31,9 @@ export default function ExerciseCamera() {
       </div>
 
       <div style={styles.buttonWrapper}>
-        <button style={styles.startButton}>운동 시작하기</button>
+        <button style={styles.startButton} onClick={handleStart}>
+          운동 시작하기
+        </button>
       </div>
     </div>
   );
@@ -33,12 +42,12 @@ export default function ExerciseCamera() {
 const styles = {
   container: {
     width: "90%",
-    maxWidth: 600, // 웹에서 보기 좋은 최대 너비로 변경
+    maxWidth: 600,
     margin: "0 auto",
     backgroundColor: "#fff",
     display: "flex",
     flexDirection: "column",
-    minHeight: "80vh", // 너무 작지 않게 최소 높이 지정
+    minHeight: "80vh",
     boxSizing: "border-box",
     padding: 20,
     fontFamily: "'Lexend', sans-serif",
@@ -84,8 +93,8 @@ const styles = {
   },
   cameraBox: {
     width: "100%",
-    maxWidth: 540, // 더 넓게
-    height: 480, // 비율 적당히 맞춤
+    maxWidth: 540,
+    height: 480,
     borderRadius: 12,
     backgroundColor: "#F0F2F5",
     display: "flex",

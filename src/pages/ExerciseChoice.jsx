@@ -20,7 +20,7 @@ export default function ExerciseChoice() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/camera");
+    navigate("/exercisestart");
   };
 
   return (
@@ -98,5 +98,16 @@ const styles = {
     fontWeight: 600,
     color: "#121417",
     textAlign: "center",
+  },
+  backButton: {
+    background: "none",
+    border: "none",
+    fontSize: 24,
+    cursor: "pointer",
+    color: "#333",
+    padding: 0,
+    minWidth: 30,
+    textAlign: "left",
+    marginBottom: 12, // 버튼과 제목 사이 여백
   },
 };

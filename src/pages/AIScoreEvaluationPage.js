@@ -5,7 +5,6 @@ import UserProfile from "../components/UserProfile";
 import profileImg from "../assets/profile.png";
 import ScoreSummary from "../components/ScoreSummary";
 import FeedbackMessage from "../components/FeedbackMessage";
-import RecommendedContent from "../components/RecommendedContent";
 import ImprovementTips from "../components/ImprovementTips";
 import ActionButtons from "../components/ActionButtons";
 
@@ -25,22 +24,6 @@ const scoreData = {
 const feedbackText =
   "카르페디엠님의 자세는 전반적으로 양호했지만 개선의 여지가 있습니다. 운동하는 동안 등을 곧게 펴고 코어를 움직이도록 집중하세요.";
 
-const recommendedVideos = [
-  {
-    id: 1,
-    // 'dQw4w9WgXcQ' 영상 ID를 사용한 고화질 썸네일 URL
-    thumbnail: "https://www.youtube.com/watch?v=dQw4w9WgXcQ2",
-    title: "스쿼트 자세 개선 (유튜브 영상)",
-    // 'dQw4w9WgXcQ' 영상 ID를 사용한 실제 유튜브 시청 링크
-    videoLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    id: 2,
-    thumbnail: "https://via.placeholder.com/150x100?text=Video+2",
-    title: "코어 강화 운동",
-  },
-];
-
 const improvementTips = [
   { id: 1, text: "코어를 잘 잡으세요", checked: false },
   { id: 2, text: "등을 곧게 유지하세요", checked: false },
@@ -56,7 +39,6 @@ const AIScoreEvaluationPage = () => {
         <UserProfile {...userData} />
         <ScoreSummary {...scoreData} />
         <FeedbackMessage message={feedbackText} />
-        <RecommendedContent videos={recommendedVideos} />
         <ImprovementTips tips={improvementTips} />
       </main>
 
