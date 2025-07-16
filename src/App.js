@@ -38,7 +38,7 @@ function App() {
             </li>
             <li>
               <Link
-                to="/choice"
+                to="/exercisechoice"
                 style={{ color: "white", textDecoration: "none" }}
               >
                 운동 선택
@@ -46,7 +46,7 @@ function App() {
             </li>
             <li>
               <Link
-                to="/camera"
+                to="/exercisestart"
                 style={{ color: "white", textDecoration: "none" }}
               >
                 운동 시작
@@ -54,7 +54,7 @@ function App() {
             </li>
             <li>
               <Link
-                to="/exercise"
+                to="/exercisefinish"
                 style={{ color: "white", textDecoration: "none" }}
               >
                 운동 종료
@@ -62,7 +62,7 @@ function App() {
             </li>
             <li>
               <Link
-                to="/score"
+                to="/exercisescore"
                 style={{ color: "white", textDecoration: "none" }}
               >
                 결과
@@ -74,10 +74,10 @@ function App() {
         {/* 라우팅 설정 */}
         <Routes>
           <Route path="/" element={<MainPage />} /> {/* 메인페이지 */}
-          <Route path="/score" element={<AIScoreEvaluationPage />} />
-          <Route path="/exercise" element={<ExercisePage />} />
-          <Route path="/choice" element={<ExerciseChoice />} />
-          <Route path="/camera" element={<ExerciseCamera />} />
+          <Route path="/exercisechoice" element={<ExerciseChoice />} />
+          <Route path="/exercisestart" element={<ExerciseCamera />} />
+          <Route path="/exercisefinish" element={<ExercisePage />} />
+          <Route path="/exercisescore" element={<AIScoreEvaluationPage />} />
         </Routes>
       </div>
     </Router>

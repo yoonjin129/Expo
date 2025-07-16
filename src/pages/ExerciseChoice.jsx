@@ -46,52 +46,57 @@ export default function ExerciseChoice() {
 
 const styles = {
   page: {
-    maxWidth: 393,
+    width: "100%",
+    maxWidth: 960, // 데스크탑 기준 최대 너비
     margin: "0 auto",
     minHeight: "100vh",
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#fff",
     display: "flex",
     flexDirection: "column",
-    padding: "0 16px",
+    padding: "20px", // 여백 좀 더 넉넉하게
     fontFamily: "'Lexend', sans-serif",
     boxSizing: "border-box",
   },
   header: {
-    padding: "20px 0 12px",
+    paddingBottom: 16,
   },
   title: {
-    fontSize: "1.125rem", // 18px
+    fontSize: "1.5rem", // 좀 더 크고 선명하게
     fontWeight: 700,
     color: "#121417",
     margin: 0,
   },
   grid: {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: 12,
-    justifyContent: "space-between",
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)", // 3개 고정 배치
+    gap: 20,
   },
   card: {
-    flexBasis: "48%", // 2개씩 가로 배치
-    marginBottom: 12,
+    cursor: "pointer",
+    borderRadius: 10,
+    overflow: "hidden",
+    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+    backgroundColor: "#f9f9f9",
     display: "flex",
     flexDirection: "column",
-    alignItems: "flex-start",
-    cursor: "pointer",
+    alignItems: "center",
+    padding: 10,
+    transition: "transform 0.2s ease",
+  },
+  cardHover: {
+    transform: "scale(1.05)",
   },
   image: {
     width: "100%",
-    aspectRatio: "1 / 1", // 정사각형
-    borderRadius: 10,
+    height: "220px", // 기존 180px에서 좀 더 크게
     objectFit: "cover",
-    backgroundColor: "#eee",
+    borderRadius: 10,
     marginBottom: 12,
   },
   label: {
-    fontSize: "1rem", // 16px
-    fontWeight: 500,
+    fontSize: "1.1rem",
+    fontWeight: 600,
     color: "#121417",
-    height: 24,
-    width: "100%",
+    textAlign: "center",
   },
 };

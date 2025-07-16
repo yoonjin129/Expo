@@ -13,7 +13,7 @@ export default function ExerciseCamera() {
 
       <div style={styles.subTextWrapper}>
         <p style={styles.subText}>
-          운동을 진행할때 몸 전체가 보일 수 있게 화면을 조정 하세요.
+          운동을 진행할 때 몸 전체가 보일 수 있게 화면을 조정하세요.
         </p>
       </div>
 
@@ -32,86 +32,86 @@ export default function ExerciseCamera() {
 
 const styles = {
   container: {
-    width: "100%",
-    maxWidth: "390px",
-    minHeight: "844px",
+    width: "90%",
+    maxWidth: 600, // 웹에서 보기 좋은 최대 너비로 변경
     margin: "0 auto",
     backgroundColor: "#fff",
     display: "flex",
     flexDirection: "column",
+    minHeight: "80vh", // 너무 작지 않게 최소 높이 지정
+    boxSizing: "border-box",
+    padding: 20,
+    fontFamily: "'Lexend', sans-serif",
   },
   header: {
-    padding: "16px",
-    height: "72px",
+    padding: "16px 0",
+    height: 72,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
   },
   title: {
-    fontFamily: "Lexend, sans-serif",
-    fontSize: "18px",
+    fontSize: 22,
     fontWeight: 700,
     color: "#121417",
   },
   subHeader: {
-    padding: "20px 16px 12px",
+    padding: "10px 0 8px",
     textAlign: "center",
   },
   heading: {
-    fontFamily: "Lexend, sans-serif",
-    fontSize: "24px",
+    fontSize: 28,
     fontWeight: 700,
-    lineHeight: "35px",
+    lineHeight: 1.2,
     color: "#121417",
     margin: 0,
   },
   subTextWrapper: {
-    padding: "4px 16px 12px",
+    padding: "6px 0 16px",
     textAlign: "center",
   },
   subText: {
-    fontFamily: "Lexend, sans-serif",
-    fontSize: "16px",
+    fontSize: 16,
     fontWeight: 400,
-    lineHeight: "24px",
+    lineHeight: 1.5,
     color: "#121417",
     margin: 0,
   },
   cameraBoxWrapper: {
-    padding: "16px",
+    padding: 16,
     display: "flex",
     justifyContent: "center",
   },
   cameraBox: {
     width: "100%",
-    maxWidth: "358px",
-    height: "537px",
-    borderRadius: "8px",
+    maxWidth: 540, // 더 넓게
+    height: 480, // 비율 적당히 맞춤
+    borderRadius: 12,
     backgroundColor: "#F0F2F5",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    fontSize: 18,
+    color: "#555",
+    userSelect: "none",
   },
   cameraLabel: {
-    fontFamily: "Lexend, sans-serif",
-    fontSize: "16px",
     fontWeight: 500,
-    color: "#000",
   },
   buttonWrapper: {
-    padding: "12px 16px",
+    padding: "16px 0",
     display: "flex",
     justifyContent: "center",
   },
   startButton: {
     backgroundColor: "#AECBEB",
     border: "none",
-    borderRadius: "8px",
-    padding: "12px 20px",
-    fontSize: "16px",
+    borderRadius: 10,
+    padding: "14px 28px",
+    fontSize: 18,
     fontWeight: 700,
-    fontFamily: "Lexend, sans-serif",
     color: "#000",
     cursor: "pointer",
+    transition: "background-color 0.3s ease",
   },
 };
