@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../indexcs.css';
@@ -14,21 +13,24 @@ const WeightTraining = () => {
   }, []);
 
   const handlePrev = () => {
-    navigate('/exercisenumber')
-  }
+    navigate('/exercisenumber');
+  };
 
   const handleNext = () => {
-    const selected = Array.from(document.querySelectorAll(".goal-button.selected"));
-    if (selected.length < 1) {
-      alert("하나 이상 선택해주세요.");
+    const selected = document.querySelector(".goal-button.selected");
+    if (!selected) {
+      alert("하나를 선택해주세요.");
       return;
     }
-    localStorage.setItem("selectedGoalsStep5", JSON.stringify(selected.map(btn => btn.textContent.trim())));
-    navigate('/weighttraining');
+    localStorage.setItem("selectedGoalsStep6", JSON.stringify([selected.textContent.trim()]));
+    navigate('/summary'); // 실제 다음 경로로 수정해주세요
   };
 
   const toggleSelect = (e) => {
-    e.currentTarget.classList.toggle("selected");
+    // 모든 버튼 선택 해제
+    document.querySelectorAll(".goal-button").forEach(btn => btn.classList.remove("selected"));
+    // 현재 버튼만 선택
+    e.currentTarget.classList.add("selected");
   };
 
   return (
@@ -43,7 +45,7 @@ const WeightTraining = () => {
         <div className="button-grid vertical-buttons">
           {["처음이에요", "3개월 이내", "3~6개월", "6~12개월", "1년 이상", "5년 이상"].map((level, index) => (
             <button key={index} className="goal-button level-button" onClick={toggleSelect}>
-            <strong>{level}</strong>
+              <strong>{level}</strong>
             </button>
           ))}
         </div>
@@ -54,6 +56,10 @@ const WeightTraining = () => {
       </div>
     </div>
   );
+};
+
+export default WeightTraining;
+
 };
 
 export default WeightTraining;
