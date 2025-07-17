@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "../components/Header"; // Header 컴포넌트 임포트
 
 export default function ExerciseCamera() {
   const navigate = useNavigate();
@@ -9,40 +10,42 @@ export default function ExerciseCamera() {
   };
 
   return (
-    <div style={styles.container}>
-      <div style={styles.header}>
-        <span style={styles.title}>운동 준비</span>
-      </div>
+    <>
+      {" "}
+      {/* React Fragment (<></>)를 사용하여 여러 요소를 반환 */}
+      <Header title="운동 준비" showBackButton={true} />
+      {/* 이 컨테이너는 이제 헤더 아래의 내용만 감쌉니다 */}
+      <div style={styles.container}>
+        <div style={styles.subHeader}>
+          <p style={styles.heading}>올바른 위치를 선택하세요</p>
+        </div>
 
-      <div style={styles.subHeader}>
-        <p style={styles.heading}>올바른 위치를 선택하세요</p>
-      </div>
+        <div style={styles.subTextWrapper}>
+          <p style={styles.subText}>
+            운동을 진행할 때 몸 전체가 보일 수 있게 화면을 조정하세요.
+          </p>
+        </div>
 
-      <div style={styles.subTextWrapper}>
-        <p style={styles.subText}>
-          운동을 진행할 때 몸 전체가 보일 수 있게 화면을 조정하세요.
-        </p>
-      </div>
+        <div style={styles.cameraBoxWrapper}>
+          <div style={styles.cameraBox}>
+            <span style={styles.cameraLabel}>카메라 화면</span>
+          </div>
+        </div>
 
-      <div style={styles.cameraBoxWrapper}>
-        <div style={styles.cameraBox}>
-          <span style={styles.cameraLabel}>카메라 화면</span>
+        <div style={styles.buttonWrapper}>
+          <button style={styles.startButton} onClick={handleStart}>
+            운동 시작하기
+          </button>
         </div>
       </div>
-
-      <div style={styles.buttonWrapper}>
-        <button style={styles.startButton} onClick={handleStart}>
-          운동 시작하기
-        </button>
-      </div>
-    </div>
+    </>
   );
 }
 
 const styles = {
   container: {
     width: "90%",
-    maxWidth: 600,
+    // maxWidth: 600,
     margin: "0 auto",
     backgroundColor: "#fff",
     display: "flex",
@@ -52,6 +55,8 @@ const styles = {
     padding: 20,
     fontFamily: "'Lexend', sans-serif",
   },
+  // Header 컴포넌트를 사용하므로, 이 스타일들은 더 이상 필요 없을 수 있습니다.
+  // 필요 없다면 styles 객체에서 제거하거나, Header 컴포넌트의 스타일과 충돌하지 않도록 조정해야 합니다.
   header: {
     padding: "16px 0",
     height: 72,
@@ -64,6 +69,7 @@ const styles = {
     fontWeight: 700,
     color: "#121417",
   },
+  // 나머지 스타일은 그대로 유지
   subHeader: {
     padding: "10px 0 8px",
     textAlign: "center",

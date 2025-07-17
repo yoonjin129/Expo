@@ -1,5 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "../components/Header";
+
 import deadliftImg from "../assets/deadlift.png";
 import benchpressImg from "../assets/benchpress.png";
 import squatImg from "../assets/squat.png";
@@ -24,23 +26,31 @@ export default function ExerciseChoice() {
   };
 
   return (
-    <div style={styles.page}>
-      <header style={styles.header}>
-        <h1 style={styles.title}>PT 받을 운동을 선택하세요</h1>
-      </header>
-      <div style={styles.grid}>
-        {exercises.map((exercise, index) => (
-          <div key={index} style={styles.card} onClick={handleClick}>
-            <img
-              src={exercise.image}
-              alt={exercise.name}
-              style={styles.image}
-            />
-            <div style={styles.label}>{exercise.name}</div>
-          </div>
-        ))}
+    <>
+      {" "}
+      {/* ✅ React Fragment로 감싸서 Header와 page div를 나란히 렌더링 */}
+      {/* ✅ Header 컴포넌트 추가: 뒤로가기 버튼과 "운동 선택" 제목 */}
+      <Header title="운동 선택" showBackButton={true} />
+      <div style={styles.page}>
+        {/* ❌ 기존의 <header> 부분은 제거하거나 주석 처리합니다. */}
+        {/* <header style={styles.header}>
+          <h1 style={styles.title}>PT 받을 운동을 선택하세요</h1>
+        </header> */}
+
+        <div style={styles.grid}>
+          {exercises.map((exercise, index) => (
+            <div key={index} style={styles.card} onClick={handleClick}>
+              <img
+                src={exercise.image}
+                alt={exercise.name}
+                style={styles.image}
+              />
+              <div style={styles.label}>{exercise.name}</div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -57,7 +67,7 @@ const styles = {
     fontFamily: "'Lexend', sans-serif",
     boxSizing: "border-box",
   },
-  header: {
+  /*header: {
     paddingBottom: 16,
   },
   title: {
@@ -65,7 +75,7 @@ const styles = {
     fontWeight: 700,
     color: "#121417",
     margin: 0,
-  },
+  },*/
   grid: {
     display: "grid",
     gridTemplateColumns: "repeat(3, 1fr)", // 3개 고정 배치

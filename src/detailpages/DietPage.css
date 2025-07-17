@@ -1,0 +1,202 @@
+/* 기본 컨테이너 및 타이틀 */
+.container {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* 오늘의 식단  */
+.today-meals h3,
+.analysis h3,
+.recommend h3 {
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.analysis h3 {
+  font-size: 20px;
+}
+
+.today-meals h3,
+.recommend h3 {
+  font-size: 25px;
+}
+
+.meals-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.meal-box {
+  width: 22%;
+  padding: 10px;
+  /*background-color: #f3f3f3;*/
+  border-radius: 10px;
+  text-align: center;
+}
+
+.meal-title {
+  font-weight: bold;
+}
+
+/* 영양 분석 섹션 */
+.analysis p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.graph {
+  display: flex;
+  height: 25px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.bar {
+  text-align: center;
+  color: white;
+  line-height: 25px;
+  font-size: 12px;
+}
+
+.protein {
+  background-color: #90caf9;
+}
+
+.carb {
+  background-color: #64b5f6;
+}
+
+.fat {
+  background-color: #bbdefb;
+}
+
+.gram {
+  font-weight: lighter;
+}
+
+/* 추천 메뉴 */
+.recommend-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.all-btn {
+  font-size: 12px;
+  border: none;
+  background: none;
+  color: #000000;
+  cursor: pointer;
+}
+
+.recommend-card {
+  display: flex;
+  background: #f8f8f8;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.recommend-card .img {
+  width: 60px;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.recommend-card .info .title {
+  font-weight: bold;
+}
+
+.recommend-card .desc {
+  font-size: 12px;
+  color: #555;
+}
+
+/* 영양소 분석 박스 */
+.analysis-box {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.analysis-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.analysis-text {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* 영양소 비율 바 */
+.nutrient-bar {
+  display: flex;
+  overflow: hidden;
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  margin-top: 50px;
+  position: relative;
+}
+
+.nutrient {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 14px;
+  position: relative;
+}
+
+.nutrient-label {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.protein {
+  background-color: #85c1e9;
+  width: 35%;
+}
+
+.carb {
+  background-color: #5dade2;
+  width: 50%;
+}
+
+.fat {
+  background-color: #aed6f1;
+  width: 15%;
+}
+
+.recommend-card .info {
+  text-align: left;
+}
+
+.recommend-card .info .title {
+  font-weight: bold;
+  font-size: 16px;
+  text-align: left;
+}
+
+.recommend-card .info .desc {
+  font-size: 13px;
+  text-align: left;
+}
