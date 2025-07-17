@@ -3,18 +3,18 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../indexcs.css';
 
-const SeventhPage = () => {
+const ExerciseNumber = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
     const progressBar = document.getElementById("progressBar");
     if (progressBar) {
-      progressBar.style.width = "70%";
+      progressBar.style.width = "50%";
     }
   }, []);
 
   const handlePrev = () => {
-    navigate('/sixth')
+    navigate('/exercisemachine')
   }
 
   const handleNext = () => {
@@ -24,7 +24,7 @@ const SeventhPage = () => {
       return;
     }
     localStorage.setItem("selectedGoalsStep5", JSON.stringify(selected.map(btn => btn.textContent.trim())));
-    navigate('/eighth');
+    navigate('/weighttraining');
   };
 
   const toggleSelect = (e) => {
@@ -39,9 +39,10 @@ const SeventhPage = () => {
         </div>
       </div>
       <div className="main">
-        <h2 className="title">운동하기 불편한 부위가 있다면<br />선택해 주세요</h2>
+        <h2 className="title">일주일에 몇 번 운동하실<br />예정인가요?</h2>
+        <p className="subtitle">언제든지 변경할 수 있어요.</p>
         <div className="button-grid vertical-buttons">
-          {["없음", "허리", "목", "팔꿈치", "손목", "무릎"].map((level, index) => (
+          {["7회", "6회", "5회", "4회", "3회 미만"].map((level, index) => (
             <button key={index} className="goal-button level-button" onClick={toggleSelect}>
             <strong>{level}</strong>
             </button>
@@ -56,4 +57,4 @@ const SeventhPage = () => {
   );
 };
 
-export default SeventhPage;
+export default ExerciseNumber;

@@ -3,15 +3,19 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../indexcs.css';
 
-const FirstPage = () => {
+const ExerciseMachine = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
     const progressBar = document.getElementById("progressBar");
     if (progressBar) {
-      progressBar.style.width = "10%";
+      progressBar.style.width = "40%";
     }
   }, []);
+
+  const handlePrev = () => {
+    navigate('/myweight')
+  }
 
   const handleNext = () => {
     const selected = Array.from(document.querySelectorAll(".goal-button.selected"));
@@ -20,7 +24,7 @@ const FirstPage = () => {
       return;
     }
     localStorage.setItem("selectedGoalsStep1", JSON.stringify(selected.map(btn => btn.textContent.trim())));
-    navigate('/second');
+    navigate('/exercisenumber');
   };
 
   const toggleSelect = (e) => {
@@ -35,27 +39,26 @@ const FirstPage = () => {
         </div>
       </div>
       <div className="main">
-        <h2 className="title">운동 수준이 어떻게 되시나요?</h2>
-        <p className="subtitle">적절한 운동 추천이 필요해요! 외부에 공개되지 않아요.</p>
+        <h2 className="title">어떤 기구를 사용할 수 있나요?</h2>
+        <p className="subtitle">기구 또는 장소에 따라 맞게 추천해드려요</p>
         <div className="button-grid vertical-buttons">
-          {["입문", "초급", "중급", "고급", "전문가"].map((level, index) => (
+          {["헬스장 기구", "홈짐 기구", "맨몸 운동", "소도구 운동"].map((level, index) => (
             <button key={index} className="goal-button level-button" onClick={toggleSelect}>
               <strong>{level}</strong><br />
               <span className="desc">{
-                ["운동초보", "자세는 조금 알지만 무슨 운동을 해야 할지 몰라요", 
-                "운동 자세를 잘 알고, 나만의 루틴이 있어요", 
-                "운동을 직업으로 삼을 만큼의 지식이 있어요", 
-                "운동 선수급의 지식과 경험을 갖고 있어요"][index]}</span>
+                ["헬스장에 기구, 머신이 준비되어있어요.", "바벨, 덤벨, 머신등이 집에 준비되어 있어요.", 
+                "기구 없이 몸 하나로 운동이 가능해요.", 
+                "덤벨, 케틀벨, 밴드 등의 운동기구들이 준비되어 있어요."][index]}</span>
             </button>
           ))}
         </div>
       </div>
       <div className="arrow-buttons">
-        <button className="arrow" style={{ visibility: "hidden" }}>&#8249;</button>
+        <button className="arrow" onClick={handlePrev}>&#8249;</button>
         <button className="arrow" onClick={handleNext}>&#8250;</button>
       </div>
     </div>
   );
 };
 
-export default FirstPage;
+export default ExerciseMachine;

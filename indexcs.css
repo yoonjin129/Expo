@@ -73,10 +73,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 15px auto;
-    background-color: #dceeff;
     padding: 20px 20px;
+    background-color: #dceeff;
     border-radius: 20px;
+    margin: 20px;
 }
 
 .weight-input {
@@ -84,10 +84,10 @@ body {
     font-size: 20px;
     border: none;
     border-bottom: 2px solid #000;
+    background-color: #dceeff;
     text-align: center;
     outline: none;
     font-weight: bold;
-    background-color: #dceeff;
 }
 
 .kg-label {
@@ -161,22 +161,32 @@ body {
 
 /* ====== 푸터 영역 (좌우 화살표) ====== */
 .arrow-buttons {
-  flex: 0 0 15%; /* 전체 높이의 15% */
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 0 20px;
 }
 
 .arrow {
-    color: #2D8CFF;
-    font-size: 28px;
-    cursor: pointer;
-    background: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #dceeff;
     border: none;
-    padding: 0;
-    outline: none;
-    appearance: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #2d8cff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.arrow:hover {
+  background-color: #c2dbff;
 }
 
 

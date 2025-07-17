@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../indexcs.css';
 
-const ThirdPage = () => {
+const MyWeight = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -14,16 +14,16 @@ const ThirdPage = () => {
   }, []);
 
   const handlePrev = () => {
-    navigate('/second')
+    navigate('/exercisegoal')
   }
 
   const handleNext = () => {
-    navigate('/fourth');
+    navigate('/exercisemachine');
   };
 
-  const toggleSelect = (e) => {
-    e.currentTarget.classList.toggle("selected");
-  };
+  // const toggleSelect = (e) => {
+  //   e.currentTarget.classList.toggle("selected");
+  // };
 
   return (
     <div>
@@ -34,7 +34,8 @@ const ThirdPage = () => {
       </div>
       <div className="main">
         <h2 className="title">목표 몸무게가 어떻게 되시나요?</h2>
-        <div>
+        <p className="subtitle">몸무게 관리가 필요 없으신 분들은 넘어가셔도 돼요.</p>
+        <div className='weight-input-container'>
           <input type="number"
           id="targetWeight"
           name='targetWeight'
@@ -54,4 +55,4 @@ const ThirdPage = () => {
   );
 };
 
-export default ThirdPage;
+export default MyWeight;

@@ -3,18 +3,18 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../indexcs.css';
 
-const TenPage = () => {
+const ExerciseGoal = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
     const progressBar = document.getElementById("progressBar");
     if (progressBar) {
-      progressBar.style.width = "100%";
+      progressBar.style.width = "90%";
     }
   }, []);
 
   const handlePrev = () => {
-    navigate('/ninth')
+    navigate('/exerciselevel')
   }
 
   const handleNext = () => {
@@ -23,8 +23,8 @@ const TenPage = () => {
       alert("하나 이상 선택해주세요.");
       return;
     }
-    localStorage.setItem("selectedGoalsStep5", JSON.stringify(selected.map(btn => btn.textContent.trim())));
-    navigate('/ten')
+    localStorage.setItem("selectedGoalsStep1", JSON.stringify(selected.map(btn => btn.textContent.trim())));
+    navigate('/myweight');
   };
 
   const toggleSelect = (e) => {
@@ -39,20 +39,17 @@ const TenPage = () => {
         </div>
       </div>
       <div className="main">
-        <h2 className="title">무릎 대고 푸쉬업<br />몇개나 할 수 있나요?</h2>
-        <p className="subtitle">운동 수행 능력은 운동 루틴 추천에 도움이 돼요.<br />
-        잘 모른다면 이 질문은 넘어가도 괜찮아요.</p>
+        <h2 className="title">운동 시작 전,<br />가장 중요한 목표는 무엇인가요?</h2>
+        <p className="subtitle">언제든지 변경할 수 있어요.</p>
         <div className="button-grid vertical-buttons">
-            <a href='#' onClick={(e) => {
-                e.preventDefault();
-                alert('무릎 대고 푸쉬업은 일반 푸쉬업이 어려울 때 무릎을 바닥에 대고 하는 푸쉬업 변형 동작입니다. 팔과 가슴 근육, 코어 근육을 단련하는 데 효과적이며, 초보자나 여성, 노약자도 쉽게 할 수 있는 운동입니다.')
-            }}>
-                <p className='subtitle' style={{cursor:'pointer', color:'#2D8CFF'}}>
-                무릎 대고 푸쉬업은 어떤 운동인가요?</p>
-            </a>
-          {["10개 이하", "11~20개", "21개 이상", "잘 모르겠어요"].map((level, index) => (
+          {["웨이트 입문", "다이어트", "벌크업", "린매스업", "대회 준비", "건강한 습관 만들기"].map((level, index) => (
             <button key={index} className="goal-button level-button" onClick={toggleSelect}>
-            <strong>{level}</strong>
+              <strong>{level}</strong><br />
+              <span className="desc">{
+                ["웨이트 트레이닝을 시작하는데 기초를 다져요.", "체중을 감량하고 건강한 체형을 만들어요.", 
+                "근육량과 더 큰 몸을 만들고 싶어요.", 
+                "근육량은 늘리고 체지방은 내린 멋진 몸을 만들고 싶어요.",
+                "대회 준비를 해요.", "꾸준하게 실천할 수 있는 습관을 만들어요."][index]}</span>
             </button>
           ))}
         </div>
@@ -65,4 +62,4 @@ const TenPage = () => {
   );
 };
 
-export default TenPage;
+export default ExerciseGoal;
