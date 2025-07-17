@@ -9,6 +9,8 @@ import MyWeight from './pages/MyWeight';
 import ExerciseMachine from './pages/ExerciseMachine';
 import ExerciseNumber from './pages/ExerciseNumber';
 import WeightTraining from './pages/WeightTraining';
+import Login from './pages/Login';
+import LoginForm from './pages/LoginForm';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -20,6 +22,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/exercisenumber" element={<ExerciseNumber />} />
         <Route path="/weighttraining" element={<WeightTraining />} />
         <Route path="/exercisegoal" element={<ExerciseGoal />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/loginform" element={<LoginForm />} />
       </Routes>
     </Router>
   </React.StrictMode>

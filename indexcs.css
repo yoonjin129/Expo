@@ -9,6 +9,13 @@ html, body {
   height: 100%;
   font-family: 'Apple SD Gothic Neo', sans-serif;
   background-color: white;
+
+  /* 드래그 방지 */
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
 }
 
 /* 전체 레이아웃: 세 영역 나누기 */
@@ -93,6 +100,8 @@ body {
 .kg-label {
     font-size: 18px;
 }
+
+/* ====== ====== */
 
 .button-grid {
   width: 100%;
@@ -190,3 +199,108 @@ body {
 }
 
 
+
+
+/* ====== 로그인 ====== */
+
+
+.login-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  display: flex;
+  width: 85%;
+  max-width: 320px;
+  height: 55%;
+  flex-direction: column;
+}
+
+.login-buttons {
+  display: flex;
+  flex: 4;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.login-button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-button.kakao {
+  background-color: #fee500;
+  color: #191600;
+}
+
+.login-button.apple {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ccc;
+}
+
+.login-button.default {
+  background-color: #2d8cff;
+  color: #ffffff;
+}
+
+.login-links {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: start;
+  gap: 10px;
+  font-size: 13px;
+  text-decoration: underline;
+}
+
+.login-links a {
+  text-decoration: none;
+  color: #000;
+}
+
+.login-links span {
+  color: #757575;
+}
+
+.login-header {
+  flex: 4;
+  font-size: 22px;
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 8px;
+  height: 100%;
+}
+
+/* .login-input-container {
+  flex: 4;
+  justify-content: center;
+  width: 100%;
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 8px;
+} */
+
+.login-input {
+  background-color: #c2dbff;
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  font-weight: bold;
+}
