@@ -1,29 +1,16 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './RecordPage.css';
+import './RecordPage.css'; 
 import DaySlider from './DaySlider';
 import CalorieChart from './CalorieChart';
 import WorkoutSummary from './WorkoutSummary';
 import FoodSummary from './FoodSummary';
+import Header from '../components/Header';
 
-// 기록 페이지 - 칼로리, 운동, 식단 기록을 한눈에 확인할 수 있는 대시보드
 const RecordPage = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="record-page">
-      <div className="header">
-        <span className="back-arrow" onClick={() => navigate('/')}>&#x2039;</span>
-        <h2>기록</h2>
-      </div>
+      <Header title="기록" showBackButton={true} />
 
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '10px 0' }}>
-        <span>2025년 8월 15일</span>
-        <button onClick={() => navigate('/calenderpage')} style={{ background: 'none', border: 'none', fontSize: '20px', cursor: 'pointer' }}>
-          &gt;
-        </button>
-      </div>
-      
       <DaySlider />
 
       <section className="nutrition-section">
@@ -60,7 +47,7 @@ const RecordPage = () => {
 
       <section className="chart-section">
         <h3 className="section-title">칼로리 기록</h3>
-        <CalorieChart />
+        <CalorieChart hideYAxis />
       </section>
 
       <section className="section">
@@ -69,12 +56,7 @@ const RecordPage = () => {
       </section>
 
       <section className="section">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h3 className="section-title">식단 기록</h3>
-          <button onClick={() => navigate('/DietPage')} style={{ background: 'none', border: 'none', fontSize: '20px', cursor: 'pointer' }}>
-            &gt;
-          </button>
-        </div>
+        <h3 className="section-title">식단 기록</h3>
         <FoodSummary />
       </section>
     </div>

@@ -17,6 +17,14 @@ const MainPage = () => {
     navigate("/exercisechoice");
   };
 
+  const goToRecord = () => {
+    navigate("/RecordPage");
+  };
+
+  const goToDiet = () => {
+    navigate("/dietpage"); // 여기만 바꿨어요!
+  };
+
   return (
     <>
       {/* 메인 콘텐츠 */}
@@ -51,19 +59,23 @@ const MainPage = () => {
           <button className="category" onClick={goToExercise}>
             운동
           </button>
-          <button className="category">기록</button>
-          <button className="category">식단</button>
+          <button className="category" onClick={goToRecord}>
+            기록
+          </button>
+          <button className="category" onClick={goToDiet}>
+            식단
+          </button>
         </section>
 
         {/* 운동 변화 그래프 */}
         <section className="graph-section">
           <h4 className="graph-title">운동 변화</h4>
-          <div className="graph">
-            {[40, 60, 80, 90, 70, 50, 30].map((height, idx) => (
+          <div className="graph-box">
+            {[20, 40, 60, 80, 50, 30, 10].map((value, idx) => (
               <div
                 className="bar"
                 key={idx}
-                style={{ height: `${height}%` }}
+                style={{ height: `${(value / 100) * 600}px` }} // 100이 최대값일 때 600px 기준 비율로 높이 조절
               ></div>
             ))}
           </div>
@@ -104,15 +116,18 @@ const MainPage = () => {
         <section className="content">
           <h4 className="recommend-title">추천 콘텐츠</h4>
           <div className="contents">
-            {["r1QapH1SIAI", "CnLZUXQofiI", "F6MI5hkLNEk"].map((id) => (
-              <iframe
-                key={id}
-                src={`https://www.youtube.com/embed/${id}`}
-                title="YouTube video"
-                frameBorder="0"
-                allowFullScreen
-              ></iframe>
-            ))}
+            {["l4THcKL-sPM", "CnLZUXQofiI", "F6MI5hkLNEk", "r1QapH1SIAI"].map(
+              (id) => (
+                <iframe
+                  key={id}
+                  src={`https://www.youtube.com/embed/${id}`}
+                  title="YouTube video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              )
+            )}
           </div>
         </section>
 
@@ -121,10 +136,10 @@ const MainPage = () => {
           <button className="nav-btn active">
             <img src={homeIcon} alt="홈" width="40" height="40" />
           </button>
-          <button className="nav-btn">
+          <button className="nav-btn" onClick={() => navigate("/calenderpage")}>
             <img src={calendarIcon} alt="캘린더" width="40" height="40" />
           </button>
-          <button className="nav-btn">
+          <button className="nav-btn" onClick={() => navigate("/recordpage")}>
             <img src={userIcon} alt="유저" width="40" height="40" />
           </button>
         </nav>

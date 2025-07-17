@@ -79,36 +79,33 @@
 
 /* 운동 변화 그래프 */
 .graph-section {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .graph-title {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
-.graph {
+.graph-box {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 10px;
-  height: 160px;
+  gap: 6px;
+  height: 600px; /* 여기만 수정됨 */
   background-color: #fff;
-  padding: 16px 24px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 .bar {
-  width: 48px;
+  width: 100px;
   background-color: #4a90e2;
-  border-radius: 6px 6px 0 0;
-  transition: background-color 0.3s ease;
-}
+  border-radius: 4px 4px 0 0;
 
-.bar:hover {
-  background-color: #357abd;
+  transition: background-color 0.3s ease;
 }
 
 /* 주간 랭킹 */
@@ -228,8 +225,8 @@
 
 .contents iframe {
   flex-shrink: 0;
-  width: 500px;
-  height: 250px;
+  width: 600px;
+  height: 300px;
   border-radius: 10px;
   border: none;
 }

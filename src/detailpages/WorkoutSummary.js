@@ -1,23 +1,57 @@
-// 운동 요약 컴포넌트 - 데드리프트, 벤치프레스, 스쿼트 운동 기록 표시
-import React from 'react';
+import React from "react";
+import deadliftImg from "../assets/deadlift.png";
+import benchpressImg from "../assets/benchpress.png";
+import squatImg from "../assets/squat.png";
 
-// 운동 요약 컴포넌트
 const workouts = [
-  { name: '데드리프트', weight: 50, sets: '15x15', img: 'https://cdn.pixabay.com/photo/2017/10/10/21/46/fitness-2830771_960_720.png' },
-  { name: '벤치프레스', weight: 50, sets: '15x15', img: 'https://cdn.pixabay.com/photo/2017/10/10/21/47/gym-2830780_960_720.png' },
-  { name: '스쿼트', weight: 50, sets: '15x15', img: 'https://cdn.pixabay.com/photo/2017/10/10/21/47/workout-2830784_960_720.png' },
+  { name: "데드리프트", weight: 50, sets: "15x15", img: deadliftImg },
+  { name: "벤치프레스", weight: 50, sets: "15x15", img: benchpressImg },
+  { name: "스쿼트", weight: 50, sets: "15x15", img: squatImg },
 ];
 
 const WorkoutSummary = () => (
-  <div>
+  <div style={{ margin: "0 16px" }}>
     {workouts.map((w, i) => (
-      <div key={i} style={{ display: 'flex', alignItems: 'center', padding: '8px 0', borderBottom: '1px solid #eee' }}>
-        <img src={w.img} alt={w.name} style={{ width: 60, height: 60, objectFit: 'contain', marginRight: 12 }} />
-        <div>
-          <div><strong>{w.name}</strong></div>
-          <div>무게 {w.weight}</div>
-          <div>세트 {w.sets}</div>
+      <div
+        key={i}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          marginBottom: "10px",
+          padding: "10px 16px",
+          border: "1px solid #eee",
+          borderRadius: "8px",
+          cursor: "pointer", // 식단쪽에 없지만 있으면 UX 좋아짐
+          position: "relative",
+        }}
+      >
+        <img
+          src={w.img}
+          alt={w.name}
+          style={{
+            width: 60,
+            height: 60,
+            borderRadius: 8,
+            objectFit: "cover",
+            marginLeft: 0,
+            marginRight: 16,
+          }}
+        />
+        <div style={{ 
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          textAlign: "left",
+
+          }}>
+          <div>
+            <strong>{w.name}</strong>
+          </div>
+          <div>무게: {w.weight}</div>
+          <div>세트: {w.sets}</div>
         </div>
+        <button style={{ fontSize: 20, color: "#aaa", position: "absolute", right: "20px", border: "none", background: "none" }}>{">"}</button>
       </div>
     ))}
   </div>

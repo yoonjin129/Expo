@@ -1,4 +1,3 @@
-// src/App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -21,6 +20,7 @@ import LoginForm from "./startpages/LoginForm";
 import RecordPage from "./detailpages/RecordPage";
 import Calenderpage from "./detailpages/calenderpage";
 import DietPage from "./detailpages/DietPage";
+import RecipePage from "./detailpages/RecipePage";
 
 import "./App.css";
 
@@ -28,7 +28,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* 네비게이션 바를 완전히 제거했습니다 */}
+        {/* Navigation 삭제됨 */}
 
         <Routes>
           <Route path="/" element={<Login />} />
@@ -46,6 +46,7 @@ function App() {
           <Route path="/calenderpage" element={<Calenderpage />} />
           <Route path="/dietpage" element={<DietPage />} />
           <Route path="/recordpage" element={<RecordPage />} />
+          <Route path="/recipe/:title" element={<RecipePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/loginform" element={<LoginForm />} />
         </Routes>

@@ -28,6 +28,16 @@ const ExerciseLevel = () => {
   };
 
   const toggleSelect = (e) => {
+    const selectedButtons = document.querySelectorAll(".goal-button.selected");
+
+    if (
+      selectedButtons.length === 1 &&
+      !e.currentTarget.classList.contains("selected")
+    ) {
+      alert("하나만 선택할 수 있습니다.");
+      return;
+    }
+
     e.currentTarget.classList.toggle("selected");
   };
 

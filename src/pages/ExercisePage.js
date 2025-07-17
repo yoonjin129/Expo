@@ -4,11 +4,12 @@ import "./ExercisePage.css";
 
 import ExerciseHeader from "../components/ExerciseHeader";
 import CoachingMessage from "../components/CoachingMessage";
-import CameraFeed from "../components/CameraFeed";
+//import CameraFeed from "../components/CameraFeed";
 import TimerDisplay from "../components/TimerDisplay";
 import ScoreBar from "../components/ScoreBar";
 import ExerciseInfo from "../components/ExerciseInfo";
 import ExerciseControls from "../components/ExerciseControls";
+import exerciseVideo from "../assets/exercisevideo.mp4";
 
 const ExercisePage = () => {
   const [exerciseName, setExerciseName] = useState("스쿼트");
@@ -47,7 +48,22 @@ const ExercisePage = () => {
       <div className="exercise-main-content">
         <div className="camera-feed-wrapper">
           <CoachingMessage message={coachingMessage} />
-          <CameraFeed />
+
+          <video
+            width="60%"
+            autoPlay
+            muted
+            loop
+            controls
+            style={{
+              borderRadius: "12px",
+              maxHeight: "500px",
+              objectFit: "cover",
+            }}
+          >
+            <source src={exerciseVideo} type="video/mp4" />
+            브라우저가 video 태그를 지원하지 않습니다.
+          </video>
         </div>
 
         <div className="exercise-vertical-info-section">

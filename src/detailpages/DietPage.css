@@ -131,6 +131,14 @@
   text-align: center;
 }
 
+.recommend h4 {
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 24px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .analysis-title {
   font-size: 24px;
   font-weight: bold;

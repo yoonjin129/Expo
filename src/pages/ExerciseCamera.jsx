@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header"; // Header 컴포넌트 임포트
+import exercisePhoto from "../assets/exercisephoto.jpg";
 
 export default function ExerciseCamera() {
   const navigate = useNavigate();
@@ -28,7 +29,11 @@ export default function ExerciseCamera() {
 
         <div style={styles.cameraBoxWrapper}>
           <div style={styles.cameraBox}>
-            <span style={styles.cameraLabel}>카메라 화면</span>
+            <img
+              src={exercisePhoto}
+              alt="운동 화면"
+              style={styles.cameraImage}
+            />
           </div>
         </div>
 
@@ -100,7 +105,7 @@ const styles = {
   cameraBox: {
     width: "100%",
     maxWidth: 540,
-    height: 480,
+    height: 700,
     borderRadius: 12,
     backgroundColor: "#F0F2F5",
     display: "flex",
@@ -128,5 +133,11 @@ const styles = {
     color: "#000",
     cursor: "pointer",
     transition: "background-color 0.3s ease",
+  },
+  cameraImage: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    borderRadius: 12,
   },
 };

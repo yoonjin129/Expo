@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './calenderpage.css';
+import Header from "../components/Header"; // Header 컴포넌트 임포트
 
 // 캘린더 페이지
 function Calenderpage() {
-  const today = new Date(2025, 7, 15);
+  const today = new Date(2025, 6, 15); 
   const navigate = useNavigate();
   
   // 사용자가 클릭한 날짜 저장하기
@@ -67,14 +68,7 @@ function Calenderpage() {
   return (
     <div className="app">
       {/* 제목 부분 */}
-      <header className="header">
-        <div className="header-content">
-          <button className="back-button" onClick={handleBackClick}>
-            ←
-          </button>
-          <h1 className="title">캘린더</h1>
-        </div>
-      </header>
+      <Header title="캘린더" showBackButton={true} />
 
       <main>
         {/* 캘린더 영역 */}

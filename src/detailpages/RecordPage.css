@@ -1,42 +1,36 @@
 /* 전체 레이아웃 */
 .record-container {
-  padding: 16px;
-  font-family: 'Helvetica', sans-serif;
+  padding: 20px 32px; /* 상하 20px, 좌우 32px로 약간 더 넉넉하게 */
+  margin: 20px; /* 화면 테두리와 전체 컨테이너 사이에 여백 추가 */
+  font-family: "Helvetica", sans-serif;
   background-color: #f9f9f9;
-}
-
-/* 상단 헤더 */
-.record-header {
-  display: flex;
-  align-items: center;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 16px;
-}
-
-.back-button {
-  margin-right: 16px;
-  font-size: 28px;
-  cursor: pointer;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box; /* 패딩을 포함해서 크기 계산 */
 }
 
 /* 날짜 슬라이더는 DaySlider.js 내부 스타일로 처리 (inline) */
 
 /* 영양성분 영역 */
+.nutrition-section {
+  margin: 0 16px;
+}
+
 .nutrition-goals {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
   margin-top: 12px;
+  box-sizing: border-box; /* 패딩 포함해서 크기 계산 */
 }
 
-.calorie-goal,
 .macro-goal {
   background-color: #fff;
   border-radius: 16px;
   padding: 12px;
   width: 100px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
   text-align: center;
 }
 
@@ -60,16 +54,123 @@
 .circle.inner {
   width: 20px;
   height: 20px;
-  background-color: #AECBEB; /* 내부 진한 원 */
+  background-color: #aecbeb; /* 내부 진한 원 */
   border-radius: 50%;
 }
 
 /* 섹션 구분 */
 section {
-  margin-top: 24px;
+  margin: 24px 16px 0 16px;
 }
 
 section h2 {
   font-size: 18px;
   margin-bottom: 8px;
+}
+
+.record-page {
+  font-family: sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.back-arrow {
+  position: absolute;
+  left: 0;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.header h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 16px 20px 8px 20px;
+}
+
+.calorie-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  margin: 0 20px 12px 20px;
+}
+
+.calorie-value {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.calorie-label {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.circle-wrap,
+.mini-circle-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outer-circle {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(78, 134, 248, 0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-circle {
+  width: 20px;
+  height: 20px;
+  background-color: #aecbeb;
+  border-radius: 50%;
+}
+
+.macro-cards {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 16px 0 16px;
+}
+
+.macro-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  width: 30%;
+  padding: 12px;
+  text-align: center;
+}
+
+.macro-value {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.macro-label {
+  font-size: 10px;
+  margin: 4px 0;
+}
+
+.chart-section {
+  margin: 0 16px 16px 16px;
+  min-height: 400px;
 }
