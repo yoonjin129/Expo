@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../indexcs.css';
@@ -14,17 +13,22 @@ const ExerciseLevel = () => {
   }, []);
 
   const handleNext = () => {
-    const selected = Array.from(document.querySelectorAll(".goal-button.selected"));
-    if (selected.length < 1) {
-      alert("하나 이상 선택해주세요.");
+    const selected = document.querySelector(".goal-button.selected");
+    if (!selected) {
+      alert("하나를 선택해주세요.");
       return;
     }
-    localStorage.setItem("selectedGoalsStep1", JSON.stringify(selected.map(btn => btn.textContent.trim())));
+    localStorage.setItem("selectedGoalsStep1", JSON.stringify([selected.textContent.trim()]));
     navigate('/exercisegoal');
   };
 
   const toggleSelect = (e) => {
-    e.currentTarget.classList.toggle("selected");
+    // 기존 선택 해제
+    const buttons = document.querySelectorAll(".goal-button");
+    buttons.forEach(btn => btn.classList.remove("selected"));
+
+    // 현재 클릭한 버튼만 선택
+    e.currentTarget.classList.add("selected");
   };
 
   return (
@@ -58,4 +62,7 @@ const ExerciseLevel = () => {
   );
 };
 
-export default ExerciseLevel;
+export default ExerciseLevel; 
+};
+
+
