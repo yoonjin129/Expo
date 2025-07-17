@@ -1,0 +1,26 @@
+/* App.css - 기본 스타일 */
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+/* 기본 스타일링 */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* 공통 스타일 */
+.day-slider, .calorie-chart, .workout-summary, .food-summary {
+  padding: 20px;
+  margin: 10px 0;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  text-align: center;
+  color: #666;
+} 

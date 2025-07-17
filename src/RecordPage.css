@@ -1,0 +1,75 @@
+/* 전체 레이아웃 */
+.record-container {
+  padding: 16px;
+  font-family: 'Helvetica', sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* 상단 헤더 */
+.record-header {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.back-button {
+  margin-right: 16px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* 날짜 슬라이더는 DaySlider.js 내부 스타일로 처리 (inline) */
+
+/* 영양성분 영역 */
+.nutrition-goals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.calorie-goal,
+.macro-goal {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 12px;
+  width: 100px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.big-value {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* 동그란 그래픽 (투명도 적용) */
+.circle.outer {
+  margin: 8px auto;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(78, 134, 248, 0.5); /* 4E86F8, 투명도 50% */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle.inner {
+  width: 20px;
+  height: 20px;
+  background-color: #AECBEB; /* 내부 진한 원 */
+  border-radius: 50%;
+}
+
+/* 섹션 구분 */
+section {
+  margin-top: 24px;
+}
+
+section h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
